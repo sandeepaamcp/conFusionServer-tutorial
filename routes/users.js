@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/signup', (req, res, next) => {
+  console.log(req.body.username);
   User.register(new User({ username: req.body.username }),
     req.body.password, (err, user) => {
       if (err) {
